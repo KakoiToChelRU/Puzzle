@@ -6,10 +6,10 @@ public class Door : MonoBehaviour
 { 
     public GameObject door;
     public static int _openDoor;
-    [SerializeField] int _botten;
+    [SerializeField] int _button;
     void Update()
     {   
-        if(_botten <= _openDoor) door.SetActive(false);
+        if(_button <= _openDoor) door.SetActive(false);
         else door.SetActive(true);
     }
 }
