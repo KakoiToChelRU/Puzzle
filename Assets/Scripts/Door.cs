@@ -3,26 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : MonoBehaviour
-{   public GameObject door;
-    public string doorTag;
-    private bool isOpen;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    
-    // Update is called once per frame
+{ 
+    public GameObject door;
+    public static int _openDoor;
+    [SerializeField] int _botten;
     void Update()
     {   
-        
-        if(doorTag == "Door1"){
-            if(isOpen == true){
-                door.SetActive(false);
-            }else if(isOpen == false){
-                door.SetActive(true);
-            }
-        }
-        
+        if(_botten <= _openDoor) door.SetActive(false);
+        else door.SetActive(true);
     }
 }
+
